@@ -1,13 +1,7 @@
 providers = ["python"]
 
-[variables]
-PYTHON_VERSION = "3.11"
-
-[phases.setup]
-nixPkgs = ["python311", "python311Packages.pip"]
-
 [phases.install]
-cmds = ["cd backend && pip install -r requirements.txt"]
+cmds = ["cd backend && python -m pip install --break-system-packages -r requirements.txt"]
 
 [start]
 cmd = "cd backend && python main.py"
