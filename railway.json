@@ -3,6 +3,8 @@
     "builder": "NIXPACKS"
   },
   "deploy": {
-    "startCommand": "cd backend && python main.py"
+    "startCommand": "cd backend && python main.py",
+    "healthcheckPath": "/",
+    "restartPolicyType": "on_failure"
   }
 }

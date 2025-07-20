@@ -16,6 +16,9 @@ CORS(app)
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 GITHUB_API_URL = "https://models.inference.ai.azure.com/chat/completions"
 
+@app.route("/", methods=["GET"])
+def health_check():
+    return jsonify({"status": "healthy", "message": "AI Buddy Backend is running!"})
 
 @app.route("/ask", methods=["POST"])
 def ask():
