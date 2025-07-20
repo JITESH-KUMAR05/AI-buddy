@@ -2,7 +2,24 @@
 
 > **Born from Innovation**: Created during the Microsoft AI Innovators Hub Workshop - a journey from learning to building! 🚀
 
-## 🌟 Project Origin
+## 🌐 Live Demo
+
+🎉 **Live Application**: [https://ai-buddy-jk.vercel.app/](https://ai-buddy-jk.vercel.app/)  
+🖥️ **Backend API**: [https://ai-buddy-2idr.onrender.com](https://ai-buddy-2idr.onrender.com)ive Demo
+
+🎉 **Live Application**: [https://ai-buddy-jk.vercel.app/](https://ai-buddy-jk.vercel.app/)  
+🖥️ **Backend API**: [https://ai-buddy-2idr.onrender.com](https://ai-buddy-2idr.onrender.com)Buddy - Your Intelligent Study Companion
+
+> **Born from Innovation**: Created during the Microsoft AI Innovators Hub Workshop - a journey from learning to building! 🚀
+
+## � Live Demo
+
+🎉 **Backend API**: [https://ai-buddy-2idr.onrender.com](https://ai-buddy-2idr.onrender.com)  
+🖥️ **Frontend** *(Coming Soon)*: Deploy to Netlify for the complete experience!
+
+---
+
+## �🌟 Project Origin
 
 This project was born from an incredible experience at the **Microsoft AI Innovators Hub Workshop**! Out of 1500+ applicants, I was fortunate to be among the selected 150 for this invite-only AI workshop powered by **Microsoft & Rinav Tech**, with support from **Global AI Hyderabad & Global AI Puducherry**.
 
@@ -10,6 +27,7 @@ This project was born from an incredible experience at the **Microsoft AI Innova
 
 - **[Venkat Sir]** - Frontend guidance and incredible energy throughout the workshop
 - **[Aditya Saladi]** - Backend architecture and implementation
+- **[Parshuram Sir]** - Industry insights from 10+ years of experience
 - **Microsoft AI Innovators Hub** - For this amazing platform and celebrating their 1-year anniversary!
 
 The original workshop project was beautifully architected by the mentors, and I've taken the liberty to enhance and modify it further with additional features and deployment optimizations.
@@ -18,10 +36,10 @@ The original workshop project was beautifully architected by the mentors, and I'
 
 - 🗣️ **Voice Recognition** - Speak your questions naturally
 - 🔊 **Text-to-Speech** - Listen to AI responses
-<!-- - 📄 **PDF Upload & Processing** - Extract text from PDF documents -->
-- 💬 **Intelligent Chat** - Powered by advanced AI models
+- 📄 **PDF Upload & Processing** - Extract text from PDF documents
+- 💬 **Intelligent Chat** - Powered by GitHub Models API
 - 📱 **Responsive Design** - Works seamlessly on all devices
-- 🌐 **Easy Deployment** - Ready for Netlify, Vercel, and more
+- 🌐 **Production Ready** - Deployed on Render with auto-scaling
 
 ## 🚀 Planned Enhancements
 
@@ -41,24 +59,25 @@ Building upon the workshop foundation, I'm working on:
 - **Web APIs** - Speech Recognition & Synthesis
 
 ### Backend
-- **Python** - Core backend language
-- **Flask** - API framework
-- **OpenAI GPT** - AI language model
-- **Environment Variables** - Secure configuration
+- **Python 3.11** - Core backend language
+- **Flask** - Lightweight web framework
+- **GitHub Models API** - AI language model integration
+- **Gunicorn** - Production WSGI server
+- **Render** - Cloud deployment platform
 
 ## 📋 Prerequisites
 
-- **Node.js** (v16 or higher)
-- **Python** (v3.8 or higher)
+- **Node.js** (v18 or higher)
+- **Python** (v3.11 or higher)
 - **npm** or **yarn**
-- **OpenAI API Key** (for AI functionality)
+- **GitHub Personal Access Token** (for AI functionality)
 
 ## 🚀 Quick Setup
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/ai-buddy.git
-cd ai-buddy
+git clone https://github.com/JITESH-KUMAR05/AI-buddy.git
+cd AI-buddy
 ```
 
 ### 2. Backend Setup
@@ -96,7 +115,7 @@ copy .env.example .env
 
 #### Backend (.env)
 ```bash
-OPENAI_API_KEY=your_openai_api_key_here
+GITHUB_TOKEN=your_github_personal_access_token_here
 SMTP_SENDER=your_email@gmail.com
 SMTP_PASSWORD=your_app_password
 ```
@@ -107,7 +126,7 @@ SMTP_PASSWORD=your_app_password
 VITE_API_BASE_URL=http://localhost:5000
 
 # For production
-# VITE_API_BASE_URL=https://your-backend-url.com
+VITE_API_BASE_URL=https://ai-buddy-2idr.onrender.com
 ```
 
 ## 🎯 Running the Application
@@ -117,7 +136,7 @@ VITE_API_BASE_URL=http://localhost:5000
 1. **Start Backend Server**
 ```bash
 cd backend
-python main.py
+python app.py
 # Server runs on http://localhost:5000
 ```
 
@@ -138,31 +157,44 @@ npm run build
 
 ## 🌐 Deployment
 
-### Frontend (Netlify/Vercel)
-1. Build the project: `npm run build`
-2. Deploy the `dist` folder
-3. Set environment variables in deployment platform:
-   - `VITE_API_BASE_URL=https://your-backend-url.com`
+### Backend (Render) ✅ **DEPLOYED**
+**Live API**: [https://ai-buddy-2idr.onrender.com](https://ai-buddy-2idr.onrender.com)
 
-### Backend (Heroku/Railway/Render)
-1. Deploy using your preferred platform
-2. Set environment variables:
-   - `OPENAI_API_KEY`
-   - `SMTP_SENDER`
-   - `SMTP_PASSWORD`
+1. **Create a new Web Service on [Render](https://render.com)**
+2. **Connect your GitHub repository**
+3. **Configure settings**:
+   - **Root Directory**: `backend`
+   - **Build Command**: (leave blank)
+   - **Start Command**: `gunicorn app:app`
+4. **Set Environment Variables**:
+   ```bash
+   GITHUB_TOKEN=your_github_token_here
+   SMTP_SENDER=your_email@gmail.com
+   SMTP_PASSWORD=your_app_password
+   ```
+5. **Deploy!**
+
+### Frontend (Vercel) ✅ **DEPLOYED**
+**Live Application**: [https://ai-buddy-jk.vercel.app/](https://ai-buddy-jk.vercel.app/)
+
+1. Build the project: `npm run build`
+2. Deploy to Vercel or your preferred platform
+3. Set environment variables:
+   - `VITE_API_BASE_URL=https://ai-buddy-2idr.onrender.com`
 
 ## 📁 Project Structure
 
 ```
 ai-buddy/
 ├── backend/
-│   ├── main.py              # Backend API server
+│   ├── app.py               # Backend API server (Flask app)
+│   ├── Procfile             # Render deployment configuration
 │   ├── requirements.txt     # Python dependencies
 │   ├── .env                 # Backend environment variables
 │   └── .gitignore          # Backend git ignore rules
 ├── frontend/
 │   ├── src/
-│   │   ├── components/
+│   │   ├── combonents/
 │   │   │   └── ChatBot.jsx # Main chat component
 │   │   ├── App.jsx         # Root component
 │   │   └── main.jsx        # Entry point
@@ -185,9 +217,10 @@ ai-buddy/
 - Cross-browser compatibility
 
 ### AI Integration
-- OpenAI GPT integration for intelligent responses
-- Streaming responses for better UX
+- GitHub Models API integration for intelligent responses
+- Custom prompt handling and response processing
 - Error handling and fallbacks
+- Environment-based configuration
 
 ## 🤝 Contributing
 
@@ -197,10 +230,6 @@ This project started as a learning experience and continues to evolve! Contribut
 2. Create a feature branch
 3. Make your changes
 4. Submit a pull request
-
-## 📝 License
-
-This project is open source and available under the [MIT License](LICENSE).
 
 ## 🎉 Acknowledgments
 
