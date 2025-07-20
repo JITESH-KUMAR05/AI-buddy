@@ -1,0 +1,88 @@
+# Root gitignore for AI-buddy project
+
+# Environment variables (all environments)
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+.env.*.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Build outputs
+dist/
+dist-ssr/
+*.local
+
+# Logs
+logs
+*.log
+
+# API Keys and sensitive data
+*.key
+*.pem
+config.json
+secrets.json
+.env*
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
