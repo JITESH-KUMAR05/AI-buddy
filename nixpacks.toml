@@ -1,7 +1,0 @@
-providers = ["python"]
-
-[phases.install]
-cmds = ["cd backend && python -m pip install --break-system-packages -r requirements.txt"]
-
-[start]
-cmd = "cd backend && python main.py"
