@@ -5,17 +5,9 @@
 ## 🌐 Live Demo
 
 🎉 **Live Application**: [https://ai-buddy-jk.vercel.app/](https://ai-buddy-jk.vercel.app/)  
-🖥️ **Backend API**: [https://ai-buddy-2idr.onrender.com](https://ai-buddy-2idr.onrender.com)ive Demo
-
-🎉 **Live Application**: [https://ai-buddy-jk.vercel.app/](https://ai-buddy-jk.vercel.app/)  
-🖥️ **Backend API**: [https://ai-buddy-2idr.onrender.com](https://ai-buddy-2idr.onrender.com)Buddy - Your Intelligent Study Companion
+🖥️ **Backend API**: [https://ai-buddy-2idr.onrender.com](https://ai-buddy-2idr.onrender.com) Buddy - Your Intelligent Study Companion
 
 > **Born from Innovation**: Created during the Microsoft AI Innovators Hub Workshop - a journey from learning to building! 🚀
-
-## � Live Demo
-
-🎉 **Backend API**: [https://ai-buddy-2idr.onrender.com](https://ai-buddy-2idr.onrender.com)  
-🖥️ **Frontend** *(Coming Soon)*: Deploy to Netlify for the complete experience!
 
 ---
 
@@ -27,7 +19,6 @@ This project was born from an incredible experience at the **Microsoft AI Innova
 
 - **[Venkat Sir]** - Frontend guidance and incredible energy throughout the workshop
 - **[Aditya Saladi]** - Backend architecture and implementation
-- **[Parshuram Sir]** - Industry insights from 10+ years of experience
 - **Microsoft AI Innovators Hub** - For this amazing platform and celebrating their 1-year anniversary!
 
 The original workshop project was beautifully architected by the mentors, and I've taken the liberty to enhance and modify it further with additional features and deployment optimizations.
@@ -36,7 +27,7 @@ The original workshop project was beautifully architected by the mentors, and I'
 
 - 🗣️ **Voice Recognition** - Speak your questions naturally
 - 🔊 **Text-to-Speech** - Listen to AI responses
-- 📄 **PDF Upload & Processing** - Extract text from PDF documents
+<!-- - 📄 **PDF Upload & Processing** - Extract text from PDF documents -->
 - 💬 **Intelligent Chat** - Powered by GitHub Models API
 - 📱 **Responsive Design** - Works seamlessly on all devices
 - 🌐 **Production Ready** - Deployed on Render with auto-scaling
