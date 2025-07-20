@@ -8,9 +8,8 @@ This project was born from an incredible experience at the **Microsoft AI Innova
 
 ### 🙏 Special Thanks To
 
-- **[@Venkatest Sir]** - Frontend guidance and incredible energy throughout the workshop
-- **[@Aditya Saladi]** - Backend architecture and implementation
-- **Parshuram Sir** - Industry insights from 10+ years of experience
+- **[Venkat Sir]** - Frontend guidance and incredible energy throughout the workshop
+- **[Aditya Saladi]** - Backend architecture and implementation
 - **Microsoft AI Innovators Hub** - For this amazing platform and celebrating their 1-year anniversary!
 
 The original workshop project was beautifully architected by the mentors, and I've taken the liberty to enhance and modify it further with additional features and deployment optimizations.
@@ -19,7 +18,7 @@ The original workshop project was beautifully architected by the mentors, and I'
 
 - 🗣️ **Voice Recognition** - Speak your questions naturally
 - 🔊 **Text-to-Speech** - Listen to AI responses
-- 📄 **PDF Upload & Processing** - Extract text from PDF documents
+<!-- - 📄 **PDF Upload & Processing** - Extract text from PDF documents -->
 - 💬 **Intelligent Chat** - Powered by advanced AI models
 - 📱 **Responsive Design** - Works seamlessly on all devices
 - 🌐 **Easy Deployment** - Ready for Netlify, Vercel, and more
@@ -43,7 +42,7 @@ Building upon the workshop foundation, I'm working on:
 
 ### Backend
 - **Python** - Core backend language
-- **FastAPI/Flask** - API framework
+- **Flask** - API framework
 - **OpenAI GPT** - AI language model
 - **Environment Variables** - Secure configuration
 

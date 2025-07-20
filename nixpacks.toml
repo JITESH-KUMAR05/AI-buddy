@@ -1,23 +1,7 @@
-# Use Python provider
-[providers]
-python = "3.11"
+providers = ["python"]
 
-# Setup phase with Python and pip
-[phases.setup]
-nixPkgs = ["python311", "python311Packages.pip", "python311Packages.setuptools"]
-
-# Install dependencies from backend folder
 [phases.install]
-cmds = [
-  "cd backend",
-  "python -m pip install --upgrade pip",
-  "python -m pip install -r requirements.txt"
-]
+cmds = ["cd backend && pip install -r requirements.txt"]
 
-# Start the application
 [start]
 cmd = "cd backend && python main.py"
-
-# Environment variables
-[variables]
-PORT = "8080"
