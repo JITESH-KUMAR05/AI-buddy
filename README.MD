@@ -2,7 +2,6 @@
 
 - 🔐 **User Authentication** - Secure login/signup with JWT tokens
 - 🎁 **Free Tier** - 5 free AI prompts per user account
-- 👑 **Super User Access** - Unlimited prompts for teamaibuddy@gmail.com
 - 🗣️ **Voice Recognition** - Speak your questions naturally
 - 🔊 **Text-to-Speech** - Listen to AI responses
 - 📄 **PDF Upload & Processing** - Extract text from PDF documents (up to 5MB)
