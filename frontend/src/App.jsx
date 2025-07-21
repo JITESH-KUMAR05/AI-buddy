@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import ChatBox from './combonents/ChatBot'
-import Auth from './combonents/Auth'
+import ChatBox from './components/ChatBot'
+import Auth from './components/Auth'
 
 function App() {
   const [user, setUser] = useState(null);

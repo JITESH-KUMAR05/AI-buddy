@@ -114,8 +114,7 @@ def register():
         # Check if user already exists
         cursor.execute('SELECT id FROM users WHERE email = ?', (email,))
         if cursor.fetchone():
-            conn.close()
-            return jsonify({"error": "User already exists"}), 400
+            return jsonify({'error': 'User already exists!'}), 400
 
         # Create new user
         cursor.execute('''
