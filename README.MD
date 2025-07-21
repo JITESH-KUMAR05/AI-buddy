@@ -1,4 +1,15 @@
-# 🤖 AI Buddy - Your Intelligent Study Companion
+# 🤖 AI Buddy - Your Inte## ✨ Features
+
+- 🔐 **User Authentication** - Secure login/signup with JWT tokens
+- 🎁 **Free Tier** - 5 free AI prompts per user account
+- 👑 **Super User Access** - Unlimited prompts for teamaibuddy@gmail.com
+- 🗣️ **Voice Recognition** - Speak your questions naturally
+- 🔊 **Text-to-Speech** - Listen to AI responses
+- 📄 **PDF Upload & Processing** - Extract text from PDF documents (up to 5MB)
+- 📊 **Document Analysis** - AI-powered detailed analysis and insights from uploaded documents
+- 💬 **Intelligent Chat** - Powered by GitHub Models API with enhanced document context
+- 📱 **Responsive Design** - Works seamlessly on all devices
+- 🌐 **Production Ready** - Deployed on modern cloud platformstudy Companion
 
 > **Born from Innovation**: Created during the Microsoft AI Innovators Hub Workshop - a journey from learning to building! 🚀
 
@@ -27,8 +38,9 @@ The original workshop project was beautifully architected by the mentors, and I'
 
 - 🗣️ **Voice Recognition** - Speak your questions naturally
 - 🔊 **Text-to-Speech** - Listen to AI responses
-<!-- - 📄 **PDF Upload & Processing** - Extract text from PDF documents -->
-- 💬 **Intelligent Chat** - Powered by GitHub Models API
+- 📄 **Document Upload & Processing** - Support for PDF and text files (up to 5MB)
+- 📊 **Document Analysis** - AI-powered detailed analysis and insights from uploaded documents
+- 💬 **Intelligent Chat** - Powered by GitHub Models API with enhanced document context
 - 📱 **Responsive Design** - Works seamlessly on all devices
 - 🌐 **Production Ready** - Deployed on Render with auto-scaling
 
@@ -52,6 +64,8 @@ Building upon the workshop foundation, I'm working on:
 ### Backend
 - **Python 3.11** - Core backend language
 - **Flask** - Lightweight web framework
+- **SQLite** - User authentication and usage tracking
+- **JWT** - Secure token-based authentication
 - **GitHub Models API** - AI language model integration
 - **Gunicorn** - Production WSGI server
 - **Render** - Cloud deployment platform
@@ -109,6 +123,7 @@ copy .env.example .env
 GITHUB_TOKEN=your_github_personal_access_token_here
 SMTP_SENDER=your_email@gmail.com
 SMTP_PASSWORD=your_app_password
+JWT_SECRET_KEY=your-very-secure-secret-key-here
 ```
 
 #### Frontend (.env)
@@ -197,10 +212,24 @@ ai-buddy/
 
 ## 🔧 Key Features Implementation
 
-### PDF Processing
-- Uses PDF.js for client-side PDF text extraction
-- Supports drag-and-drop file upload
-- Automatically populates chat with extracted text
+### User Authentication & Usage Management
+- **JWT-based Authentication**: Secure token-based login system
+- **Free Tier**: Each user gets 5 free AI prompts
+- **Usage Tracking**: Real-time monitoring of prompt usage
+- **Super User Access**: teamaibuddy@gmail.com has unlimited access (password: teamaibuddy)
+- **Secure Registration**: Password hashing with SHA-256
+- **Persistent Sessions**: Users stay logged in across browser sessions
+- **Database**: SQLite for user management and usage tracking
+
+### Enhanced Document Processing
+- **File Format Support**: PDF and text files (.pdf, .txt)
+- **File Size Limit**: 5MB maximum for optimal performance
+- **Robust PDF Processing**: CDN-based PDF.js with enhanced error handling
+- **Text Extraction**: Advanced text extraction with page-by-page processing
+- **Document Analysis**: AI provides detailed insights based on document content
+- **Smart Prompting**: Automatically generates contextual prompts for uploaded documents
+- **Error Recovery**: Graceful handling of corrupted or image-based PDFs
+- **Visual Feedback**: Loading states and success/error notifications
 
 ### Voice Features
 - Browser-native Speech Recognition API
@@ -208,7 +237,10 @@ ai-buddy/
 - Cross-browser compatibility
 
 ### AI Integration
-- GitHub Models API integration for intelligent responses
+- **GitHub Models API** integration for intelligent responses
+- **Enhanced Context Processing**: Combines user queries with document content
+- **Detailed Analysis**: Increased token limits for comprehensive document analysis
+- **Usage Limitations**: Prompt counting and limits enforcement
 - Custom prompt handling and response processing
 - Error handling and fallbacks
 - Environment-based configuration

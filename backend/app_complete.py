@@ -195,69 +195,6 @@ def login():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-@app.route("/google-auth", methods=["POST"])
-def google_auth():
-    data = request.get_json()
-    email = data.get("email")
-    name = data.get("name")
-    google_id = data.get("google_id")
-
-    if not all([email, name, google_id]):
-        return jsonify({"error": "Google authentication data incomplete"}), 400
-
-    try:
-        conn = sqlite3.connect('aibuddy.db')
-        cursor = conn.cursor()
-        
-        # Check if user already exists
-        cursor.execute('SELECT * FROM users WHERE email = ?', (email,))
-        user = cursor.fetchone()
-        
-        if user:
-            # User exists, update login
-            user_id = user[0]
-        else:
-            # Create new user with Google auth
-            # Use google_id as password hash for Google users
-            password_hash = hashlib.sha256(f"google_{google_id}".encode()).hexdigest()
-            cursor.execute('''
-                INSERT INTO users (name, email, password_hash)
-                VALUES (?, ?, ?)
-            ''', (name, email, password_hash))
-            user_id = cursor.lastrowid
-            conn.commit()
-
-        conn.close()
-
-        # Generate JWT token
-        token = jwt.encode({
-            'user_id': user_id,
-            'exp': datetime.datetime.utcnow() + datetime.timedelta(days=30)
-        }, JWT_SECRET_KEY, algorithm='HS256')
-
-        # Get user data
-        conn = sqlite3.connect('aibuddy.db')
-        cursor = conn.cursor()
-        cursor.execute('SELECT * FROM users WHERE id = ?', (user_id,))
-        user_data = cursor.fetchone()
-        conn.close()
-
-        return jsonify({
-            "message": "Google authentication successful",
-            "token": token,
-            "user": {
-                "id": user_data[0],
-                "name": user_data[1],
-                "email": user_data[2],
-                "prompts_used": user_data[4],
-                "prompts_limit": user_data[5],
-                "is_superuser": bool(user_data[6])
-            }
-        })
-
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
-
 @app.route("/profile", methods=["GET"])
 @token_required
 def get_profile(user):
@@ -293,32 +230,22 @@ def ask(user):
         # Enhanced prompt for document analysis
         if document_content:
             enhanced_prompt = f"""
-            You are a helpful AI assistant. A user has uploaded a document and asked a question about it.
+            You are an AI document analyst. A user has uploaded a document and asked a question about it.
             
             Document Content:
             {document_content}
             
             User Question: {prompt}
             
-            Please provide a clear, concise response that:
-            - Directly answers the user's question
-            - Is well-structured but brief (under 300 words)
-            - Uses simple formatting (avoid excessive headers or bullet points)
-            - Is conversational and easy to understand
-            - References specific parts of the document when relevant
+            Please provide a detailed, well-formatted analysis and answer based on the document content. 
+            Structure your response with clear headings, bullet points, and sections for better readability.
+            If the question is about the document, focus on specific details from the text. 
+            If it's a general question, you can provide broader insights while referencing the document when relevant.
+            
+            Make your response comprehensive, professional, and directly address the user's question.
             """
         else:
-            enhanced_prompt = f"""
-            You are a helpful AI assistant. Please provide a clear, concise response to this question:
-            
-            {prompt}
-            
-            Keep your response:
-            - Direct and helpful
-            - Under 200 words unless detailed explanation is needed
-            - Conversational and friendly
-            - Easy to understand
-            """
+            enhanced_prompt = prompt
 
         headers = {
             "Authorization": f"Bearer {GITHUB_TOKEN}",
@@ -331,7 +258,7 @@ def ask(user):
                 {"role": "user", "content": enhanced_prompt}
             ],
             "temperature": 0.7,
-            "max_tokens": 400,  # Reduced for more concise responses
+            "max_tokens": 2000,  # Increased for detailed responses
             "stream": False
         }
         
