@@ -1,4 +1,4 @@
-# 🤖 AI Buddy - Your Inte## ✨ Features
+# 🤖 AI Buddy 
 
 - 🔐 **User Authentication** - Secure login/signup with JWT tokens
 - 🎁 **Free Tier** - 5 free AI prompts per user account
